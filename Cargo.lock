@@ -139,14 +139,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "pcspecs"
-version = "0.2.1"
-dependencies = [
- "os_info",
- "sysinfo",
-]
-
-[[package]]
 name = "proc-macro2"
 version = "1.0.47"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -223,6 +215,14 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-ident",
+]
+
+[[package]]
+name = "sysanalyzer"
+version = "1.0.0"
+dependencies = [
+ "os_info",
+ "sysinfo",
 ]
 
 [[package]]

@@ -1,3 +1,3 @@
 fn main() {
-    println!("{:#?}", pcspecs::specs());
+    println!("{:#?}", sysanalyzer::specs());
 }
