@@ -58,12 +58,13 @@ pub fn specs() -> Sysinfo {
         mainboard: remove_characters(&mainboard),
     };
 
-    return specs;
+    specs
 }
 
-fn remove_characters(data: String) -> String {
+
+fn remove_characters(data: &str) -> String {
     let remove_slash_r = data.replace("\r", "");
     let remove_slash_n = remove_slash_r.replace("\n", "");
 
-    return remove_slash_n;
+    remove_slash_n
 }
