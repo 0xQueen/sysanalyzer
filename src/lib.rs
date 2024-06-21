@@ -61,10 +61,9 @@ pub fn specs() -> Sysinfo {
     specs
 }
 
-fn remove_characters(data: &str) -> String {
-    let trimmed = data.trim();
-    let remove_slash_r = trimmed.replace("\r", "");
-    let remove_slash_n = remove_slash_r.replace("\n", "");
 
-    remove_slash_n
+fn remove_characters(data: &str) -> String {
+    let parts: Vec<&str> = data.split_whitespace().collect();
+
+    parts[1..].join(" ")
 }
