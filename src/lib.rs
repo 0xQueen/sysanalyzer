@@ -49,22 +49,32 @@ pub fn specs() -> Sysinfo {
     let ram: u64 = sys.total_memory() / 1024 / 1024;
 
     let specs = Sysinfo {
-        hostname: remove_characters(&hostname),
-        platform: env::consts::OS.to_string(),
+        hostname: String::from(remove_characters(
+            hostname.trim().replace("Name             ", ""),
+        )),
+        platform: String::from(env::consts::OS),
         os_number: info.version().to_string(),
-        cpu: remove_characters(&cpu),
-        gpu: remove_characters(&gpu),
-        ram: format!("{} GB", ram / 1024),
-        mainboard: remove_characters(&mainboard),
+        cpu: String::from(remove_characters(
+            cpu.trim()
+                .replace("Name                                       ", ""),
+        )),
+        gpu: String::from(remove_characters(
+            gpu.trim().replace("Name                           ", ""),
+        )),
+        ram: ram.to_string()[0..2].to_string() + " GB",
+        mainboard: String::from(remove_characters(
+            mainboard
+                .trim()
+                .replace("Product                        ", ""),
+        )),
     };
 
-    specs
+    return specs;
 }
 
-fn remove_characters(data: &str) -> String {
-    let trimmed = data.trim();
-    let remove_slash_r = trimmed.replace("\r", "");
+fn remove_characters(data: String) -> String {
+    let remove_slash_r = data.replace("\r", "");
     let remove_slash_n = remove_slash_r.replace("\n", "");
 
-    remove_slash_n
+    return remove_slash_n;
 }
