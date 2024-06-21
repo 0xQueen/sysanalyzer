@@ -1,17 +1,17 @@
 [package]
-name = "pcspecs"
-version = "0.2.1"
-edition = "2021"
+name = "sysanalyzer"
+version = "1.0.0"
+edition = "2024"
 description = "Simple api to get pc specs"
-homepage = "https://github.com/illud/rust-pcspecs"
-repository = "https://github.com/illud/rust-pcspecs"
+homepage = "https://github.com/0xQueen/sysanalyzer"
+repository = "https://github.com/0xQueen/sysanalyzer"
 include = [
     "src/**/*",
     "Cargo.toml",
     "README.md",
 ]
 keywords = [
-    "pcspecs"
+    "specs"
 ]
 licence = "MIT"
 license-file = "LICENSE"
